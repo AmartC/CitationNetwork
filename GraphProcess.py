@@ -4,25 +4,15 @@ import numpy as np
 import time
 from optparse import OptionParser
 import logging
-#from py2neo import authenticate, Graph, Path, Node, Relationship, cypher, Subgraph
-#from nltk.classify import PositiveNaiveBayesClassifier
 from collections import deque
 import networkx as nx
 import array
 import random
 
-#import community
-#from mcl_clustering import mcl
-#community detection methods.
-#implement markov chain clustering based on citations
-#goal is to graph cluster with structured attributes.
 
 
 if __name__ == "__main__":
     count = 0
-    #g = Graph('http://localhost:7474/db/data/', user = 'neo4j', password = 'graphs32')
-    #papers_subgraph = None
-    #tx = g.begin()
     all_nodes_file = sys.argv[1]
     query_nodes_file = sys.argv[2]
     num_hops = int(sys.argv[3])
@@ -34,9 +24,8 @@ if __name__ == "__main__":
         for line in q:
             original_query_nodes.add(line.rstrip())
             modified_query_nodes.add(line.rstrip())
-
+    #Code to do the hop expansion to expand the number of nodes that are part of the citation graph.
     for a in range(0, num_hops):
-        #count = 0
         added_during_hops = set()
         original_query_nodes = set(modified_query_nodes)
         with open(all_nodes_file) as all_nodes:
@@ -49,7 +38,6 @@ if __name__ == "__main__":
                             if not r in original_query_nodes:
                                 added_during_hops.add(r)
                     else:
-                        #print "added", result[0]
                         added_during_hops.add(result[0])
 
         for node in added_during_hops:

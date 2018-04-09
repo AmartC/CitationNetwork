@@ -4,8 +4,6 @@ import numpy as np
 import time
 from optparse import OptionParser
 import logging
-#from py2neo import authenticate, Graph, Path, Node, Relationship, cypher, Subgraph
-#from nltk.classify import PositiveNaiveBayesClassifier
 from collections import deque
 import networkx as nx
 
@@ -30,6 +28,7 @@ if __name__ == "__main__":
     overall = 0
     topic_count = 0
     node_file = open(nodes_file, 'w')
+    #Go through each MAG file and extract the information about each paper.
     for doc in documents:
         topic_count = 0
         with open(doc) as f:
@@ -52,6 +51,7 @@ if __name__ == "__main__":
                 if len(paper_references) == 0:
                     continue
                 combined = paper_title + " " + paper_abstract
+                #Check to see if keywords are part of the paper title or abstract.
                 for keyword in keywords:
                     if keyword in combined:
                         query_nodes.add(parsed_json["id"])
