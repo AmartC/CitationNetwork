@@ -4,7 +4,7 @@ To access the Microsoft Academic Graph database, go to the website https://www.o
 1. python GraphingParser.py allPapers.txt keywords.txt allNodes.txt allQuery.txt
 2. python GraphProcess.py allNodes.txt allQuery.txt 1 Hashed.txt
 3. First for Louvain/Label propagation which are in the same code file
-python PGAEncoder.py PGAHashed.txt PGAEdge.txt PGAEncode.txt 1
+  python PGAEncoder.py PGAHashed.txt PGAEdge.txt PGAEncode.txt 1
 
 4. ./PGAClustering.exe PGAEdge.txt LouvainClusters.txt LPAClusters.txt
 This will get the modularity and conductance for the label propagation and louvain and also will give the assignment of the clusters that each node belongs to for the Louvain and LPA clusters.
