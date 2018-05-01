@@ -29,3 +29,7 @@ Then run ClusterEvaluation with the results
 
 Then do same for MCODE and IPCA.
 
+To compute the Inter-cluster cosine similarity:
+python InterClusteringSimilarity.py Encoded.txt Clusters.txt TitleAbstract.txt [Output] PaperDegree.txt [Path of TitleAbstract.txt and PaperDegree.txt]
+
+
