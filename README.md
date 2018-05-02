@@ -1,4 +1,5 @@
 # CitationNetwork
+Note: This code is all written in Python2.
 In order to create your initial query, run GraphingParser.py
 Pass in keywords.txt which is the list of keywords to search through the title and abstract of the papers from MAG
 allNodes.txt and allQuery.txt are files which will be created by this program.
