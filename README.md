@@ -4,6 +4,7 @@ In order to create your initial query, run GraphingParser.py
 Pass in keywords.txt which is the list of keywords to search through the title and abstract of the papers from MAG
 allNodes.txt and allQuery.txt are files which will be created by this program.
 Note that the names of the files that are taken in as input can be named anything, these are just suggested names.
+keywords.txt and allQuery.txt have been provided to you as a sample here. allNodes.txt is an extremely large file so a truncated version has been given as reference called allNodesExample.txt. Running the command GraphingParser.py will create the allNodes.txt file.
 1. python GraphingParser.py [allPapers.txt] [keywords.txt] [allNodes.txt] [allQuery.txt]
 
 Once the nodes of the initial query have been selected, run an n-hop expansion like this:
