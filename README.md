@@ -33,9 +33,9 @@ as this is required for the Louvain and Label Propagation node parsing.
 
 3.python PGAEncoder.py [Hashed1.txt] [PGAEdge1.txt] [PGAEncode1.txt] 1
 
-4. ./PGAClustering.exe PGAEdge1.txt LouvainCluster.txt LPACluster.txt
+4. ./PGAClustering.exe [PGAEdge1.txt] [LouvainCluster1.txt] [LPACluster1.txt]
 
-The files LouvainCluster.txt and LPACluster.txt can be used when computing the cosine similarity.
+The files LouvainCluster1.txt and LPACluster1.txt can be used when computing the cosine similarity.
 
 
 For Infomap, we use the Python script InfomapEncoder.py to encode the nodes in the graph starting from 1 onwards instead of 0.
@@ -59,24 +59,24 @@ From there run ClusterEvaluation.exe which is compiled from ClusterEvaluation.cp
 You should use the same edge list as before which has the number of nodes and edges listed as before. This is a bit different
 than the InfomapEdge.txt so the PGAEdges.txt file is used here. This will compute the modularity and conductance of the clusters
 from Infomap.
-9. ./ClusterEvaluation.exe PGAEdges.txt RevisedInfomapClusters.txt
+9. ./ClusterEvaluation.exe PGAEdges1.txt RevisedInfomapClusters.txt
 
 For Graclus, like Infomap also requires the input nodes to start from 1 instead of 0.
 
-10. python GraclusEncoder.py GraclusHashed.txt GraclusEdge.txt GraclusEncode.txt 1
+10. python GraclusEncoder.py [Hashed1.txt] [GraclusEdge1.txt] [GraclusEncode1.txt] 1
 
 Next, run the Graclus code which you can download from the project page.
 
-11. ./graclus [GraclusEdge.txt] [Number of clusters]
+11. ./graclus [GraclusEdge1.txt] [Number of clusters]
 
 Next, we get the cluster assignments for each node. We use the program GraclusClusters.py which will
 list the clusters of the nodes from 0 counting onwards.
 
-12. python GraclusCluster.py [GraclusClusteringOutput] [GraclusClusters.txt]
+12. python GraclusCluster.py [GraclusClusteringOutput] [GraclusClusters1.txt]
 
 Next, we run the ClusterEvaluation to get the result:
 
-13. ./ClusterEvaluation.exe PGAEdges.txt [GraclusClusters.txt]
+13. ./ClusterEvaluation.exe PGAEdges1.txt [GraclusClusters1.txt]
 
 The next algorithm run is MCODE. First, encode the graph so it reads as an adjacency list.
 Use the program McodeEncoder.py
