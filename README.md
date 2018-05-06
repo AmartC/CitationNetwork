@@ -15,6 +15,8 @@ In addition, allQuery1.txt has been provided and Hashed1.txt
 
 Once the nodes of the initial query have been selected, run an n-hop expansion like this:
 Hashed.txt is an adjacency list of all of the nodes that are part of the final query.
+
+
 2. python GraphProcess.py [allNodes1.txt] [allQuery1.txt] [n] [Hashed1.txt]
 
 For computing the modularity and conductance score of the six algorithms, the following process is applied,
@@ -29,30 +31,30 @@ Thus, to encode the nodes for Label Propagation and Louvain cluster analysis:
 The 1 in this case is telling the program to output as the first line to the file PGAEdge.txt the number of nodes and edges
 as this is required for the Louvain and Label Propagation node parsing.
 
-3.python PGAEncoder.py [Hashed1.txt] [PGAEdge.txt] [PGAEncode.txt] 1
+3.python PGAEncoder.py [Hashed1.txt] [PGAEdge1.txt] [PGAEncode1.txt] 1
 
-4. ./PGAClustering.exe PGAEdge.txt LouvainCluster.txt LPACluster.txt
+4. ./PGAClustering.exe PGAEdge1.txt LouvainCluster.txt LPACluster.txt
 
 The files LouvainCluster.txt and LPACluster.txt can be used when computing the cosine similarity.
 
 
 For Infomap, we use the Python script InfomapEncoder.py to encode the nodes in the graph starting from 1 onwards instead of 0.
 
-5. python InfomapEncoder.py InfomapHashed.txt InfomapEdge.txt InfomapEncode.txt 0
+5. python InfomapEncoder.py Hashed1.txt [InfomapEdge1.txt] [InfomapEncode1.txt] 0
 
 From here, you can run the Infomap command like:
 Note that you must create InfomapOutputDirectory before feeding it as a command.
-6. ./Infomap [InfomapEdge.txt] [InfomapOutputDirectory]
+6. ./Infomap [InfomapEdge1.txt] [InfomapOutputDirectory]
 
-From there, go to the InfomapOutputDirectory which you specified and you should find a file called [InfomapEdge].tree
+From there, go to the InfomapOutputDirectory which you specified and you should find a file called [InfomapEdge1].tree
 collect the file and then run InfomapParser.py on it.
-7. python InfomapParser.py [InfomapEdge.tree] [InfomapClusters.txt]
+7. python InfomapParser.py [InfomapEdge1.tree] [InfomapClusters1.txt]
 
-One thing you must note is that InfomapClusters.txt begins with the nodes ordered at 1. Thus, in order to run this cluster
+One thing you must note is that InfomapClusters1.txt begins with the nodes ordered at 1. Thus, in order to run this cluster
 on the program which computes modularity and conductance, for each line in the file, the node should have 1 subtracted from it.
 One way to do so is to use the program Format.py to subtract 1 from each node.
 
-8. python Format.py [InfomapClusters.txt] [RevisedInfomapClusters.txt]
+8. python Format.py [InfomapClusters1.txt] [RevisedInfomapClusters.txt]
 From there run ClusterEvaluation.exe which is compiled from ClusterEvaluation.cpp
 You should use the same edge list as before which has the number of nodes and edges listed as before. This is a bit different
 than the InfomapEdge.txt so the PGAEdges.txt file is used here. This will compute the modularity and conductance of the clusters
