@@ -10,12 +10,12 @@ Note, as an example, a simpler example was added for the purpose of files. allNo
 
 To concatenate all four files together run this command:
 cat allNodes1a.txt allNodes1b.txt allNodes1c.txt allNodes1d.txt > allNodes1.txt
-In addition, allQuery1.txt has been provided
+In addition, allQuery1.txt has been provided and Hashed1.txt
 1. python GraphingParser.py [allPapers.txt] [keywords.txt] [allNodes1.txt] [allQuery1.txt]
 
 Once the nodes of the initial query have been selected, run an n-hop expansion like this:
 Hashed.txt is an adjacency list of all of the nodes that are part of the final query.
-2. python GraphProcess.py [allNodes.txt] [allQuery.txt] [n] [Hashed.txt]
+2. python GraphProcess.py [allNodes1.txt] [allQuery1.txt] [n] [Hashed1.txt]
 
 For computing the modularity and conductance score of the six algorithms, the following process is applied,
 
@@ -29,7 +29,7 @@ Thus, to encode the nodes for Label Propagation and Louvain cluster analysis:
 The 1 in this case is telling the program to output as the first line to the file PGAEdge.txt the number of nodes and edges
 as this is required for the Louvain and Label Propagation node parsing.
 
-3.python PGAEncoder.py [Hashed.txt] [PGAEdge.txt] [PGAEncode.txt] 1
+3.python PGAEncoder.py [Hashed1.txt] [PGAEdge.txt] [PGAEncode.txt] 1
 
 4. ./PGAClustering.exe PGAEdge.txt LouvainCluster.txt LPACluster.txt
 
