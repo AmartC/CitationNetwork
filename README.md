@@ -5,7 +5,13 @@ Pass in keywords.txt which is the list of keywords to search through the title a
 allNodes.txt and allQuery.txt are files which will be created by this program.
 Note that the names of the files that are taken in as input can be named anything, these are just suggested names.
 keywords.txt and allQuery.txt have been provided to you as a sample here. allNodes.txt is an extremely large file so a truncated version has been given as reference called allNodesExample.txt. Running the command GraphingParser.py will create the allNodes.txt file.
-1. python GraphingParser.py [allPapers.txt] [keywords.txt] [allNodes.txt] [allQuery.txt]
+
+Note, as an example, a simpler example was added for the purpose of files. allNodes1a.txt, allNodes1b.txt, allNodes1c.txt, allNodes1d.txt all are allNodes1.txt split into 4 smaller files because of restrictions on Github for file size. You should merge together the four files 
+
+To concatenate all four files together run this command:
+cat allNodes1a.txt allNodes1b.txt allNodes1c.txt allNodes1d.txt > allNodes1.txt
+In addition, allQuery1.txt has been provided
+1. python GraphingParser.py [allPapers.txt] [keywords.txt] [allNodes1.txt] [allQuery1.txt]
 
 Once the nodes of the initial query have been selected, run an n-hop expansion like this:
 Hashed.txt is an adjacency list of all of the nodes that are part of the final query.
