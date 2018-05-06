@@ -54,12 +54,12 @@ One thing you must note is that InfomapClusters1.txt begins with the nodes order
 on the program which computes modularity and conductance, for each line in the file, the node should have 1 subtracted from it.
 One way to do so is to use the program Format.py to subtract 1 from each node.
 
-8. python Format.py [InfomapClusters1.txt] [RevisedInfomapClusters.txt]
+8. python Format.py [InfomapClusters1.txt] [RevisedInfomapClusters1.txt]
 From there run ClusterEvaluation.exe which is compiled from ClusterEvaluation.cpp
 You should use the same edge list as before which has the number of nodes and edges listed as before. This is a bit different
 than the InfomapEdge.txt so the PGAEdges.txt file is used here. This will compute the modularity and conductance of the clusters
 from Infomap.
-9. ./ClusterEvaluation.exe PGAEdges1.txt RevisedInfomapClusters.txt
+9. ./ClusterEvaluation.exe PGAEdge11.txt RevisedInfomapClusters1.txt
 
 For Graclus, like Infomap also requires the input nodes to start from 1 instead of 0.
 
