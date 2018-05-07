@@ -59,7 +59,7 @@ From there run ClusterEvaluation.exe which is compiled from ClusterEvaluation.cp
 You should use the same edge list as before which has the number of nodes and edges listed as before. This is a bit different
 than the InfomapEdge.txt so the PGAEdges.txt file is used here. This will compute the modularity and conductance of the clusters
 from Infomap.
-9. ./ClusterEvaluation.exe PGAEdge11.txt RevisedInfomapClusters1.txt
+9. ./ClusterEvaluation.exe PGAEdge1.txt RevisedInfomapClusters1.txt
 
 For Graclus, like Infomap also requires the input nodes to start from 1 instead of 0.
 
