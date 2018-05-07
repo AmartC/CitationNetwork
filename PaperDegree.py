@@ -19,7 +19,7 @@ if __name__ == "__main__":
     for node in node_degree:
         query_degree[node] = len(node_degree[node])
 
-    current = open(output, 'wb')
+    current = open(output_file, 'wb')
     for node in query_degree:
         current_line = node + " " + str(query_degree[node]) + "\n"
         current.write(current_line)
