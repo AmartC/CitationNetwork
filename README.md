@@ -4,7 +4,9 @@ In order to create your initial query, run GraphingParser.py
 Pass in keywords.txt which is the list of keywords to search through the title and abstract of the papers from MAG
 allNodes.txt and allQuery.txt are files which will be created by this program.
 Note that the names of the files that are taken in as input can be named anything, these are just suggested names.
-keywords.txt and allQuery.txt have been provided to you as a sample here. allNodes.txt is an extremely large file so a truncated version has been given as reference called allNodesExample.txt. Running the command GraphingParser.py will create the allNodes.txt file.
+keywords.txt and allQuery.txt have been provided to you as a sample here. allNodes.txt is an extremely large file so a truncated version has been given as reference called allNodesExample.txt. Running the command GraphingParser.py will create the allNodes1.txt file.
+
+Note, the code outline given is for an example of taking the queries from just the first MAG file. mag_papers_0.txt. All of the files which are mentioned have been added to this github repository and can be used to run the example.
 
 Note, as an example, a simpler example was added for the purpose of files. allNodes1a.txt, allNodes1b.txt, allNodes1c.txt, allNodes1d.txt all are allNodes1.txt split into 4 smaller files because of restrictions on Github for file size. You should merge together the four files 
 
@@ -114,22 +116,22 @@ The file to use is InterClusteringSimilarity.py
 In this case, the alignment of beginning with 0 or 1 as the node does not matter as the program takes in the appropriate encoding
 and will parse from there.
 In addition, the program uses two text files. TitleAbstract1.txt and PaperDegree1.txt
-PaperDegree.txt contains the degree of each paper that is part of the query.
+PaperDegree1.txt contains the degree of each paper that is part of the query.
 TitleAbstract.txt is a pairing of the id of each paper and the value is the title and the abstract of the paper combined as a long string.
 
 The program TitleHash.py is used to create this TitleAbstract1.txt.
 
 21. python TitleHash.py allPapers.txt [EncodedMcode1.txt] [TitleAbstract1.txt]
 
-We also need to compute the degree of all papers that are part of the program. A short Python script can be written that
-computes this from the adjacency matrix.
-This is called PaperDegree.txt
+We also need to compute the degree of all papers that are part of the program. Use the script PaperDegree.py to do so.
+
+22. python PaperDegree.py allNodes1.txt PaperDegree1.txt
 
 From here, we can run the InterClusteringSimilarity.py script.
-22. python InterClusteringSimilarity.py [EncodedNodes] [Clusters] [TitleAbstract.txt] [Output File] [PaperDegree.txt] [Path of TitleAbstract.txt and PaperDegree.txt]
+22. python InterClusteringSimilarity.py [EncodedNodes] [Clusters] [TitleAbstract1.txt] [Output File] [PaperDegree1.txt] [Path of TitleAbstract.txt and PaperDegree.txt]
 
 We can also compute the Intra-cluster cosine similarity within the nodes in a cluster.
 
-23. python ClusteringSimilarity.py [EncodedNodes] [Clusters] [TitleAbstract.txt] [Output file] [PaperDegree.txt] [Path of TitleAbstract.txt and PaperDegree.txt] [Largest cluster size before changing method of computing average cosine similarity]
+23. python ClusteringSimilarity.py [EncodedNodes] [Clusters] [TitleAbstract1.txt] [Output file] [PaperDegree1.txt] [Path of TitleAbstract1.txt and PaperDegree1.txt] [Largest cluster size before changing method of computing average cosine similarity]
 
 
