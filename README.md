@@ -113,13 +113,13 @@ The file to use is InterClusteringSimilarity.py
 
 In this case, the alignment of beginning with 0 or 1 as the node does not matter as the program takes in the appropriate encoding
 and will parse from there.
-In addition, the program uses two text files. TitleAbstract.txt and PaperDegree.txt
+In addition, the program uses two text files. TitleAbstract1.txt and PaperDegree1.txt
 PaperDegree.txt contains the degree of each paper that is part of the query.
 TitleAbstract.txt is a pairing of the id of each paper and the value is the title and the abstract of the paper combined as a long string.
 
-The program TitleHash.py is used to create this TitleAbstract.txt.
+The program TitleHash.py is used to create this TitleAbstract1.txt.
 
-21. python TitleHash.py allPapers.txt [EncodedMcode.txt] [TitleAbstract.txt]
+21. python TitleHash.py allPapers.txt [EncodedMcode1.txt] [TitleAbstract1.txt]
 
 We also need to compute the degree of all papers that are part of the program. A short Python script can be written that
 computes this from the adjacency matrix.
