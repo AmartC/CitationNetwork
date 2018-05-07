@@ -72,7 +72,7 @@ Next, run the Graclus code which you can download from the project page.
 Next, we get the cluster assignments for each node. We use the program GraclusClusters.py which will
 list the clusters of the nodes from 0 counting onwards.
 
-12. python GraclusCluster.py [GraclusClusteringOutput] [GraclusClusters1.txt]
+12. python GraclusClusters.py [GraclusClusteringOutput] [GraclusClusters1.txt]
 
 Next, we run the ClusterEvaluation to get the result:
 
