@@ -128,10 +128,13 @@ We also need to compute the degree of all papers that are part of the program. U
 22. python PaperDegree.py allNodes1.txt PaperDegree1.txt
 
 From here, we can run the InterClusteringSimilarity.py script.
-22. python InterClusteringSimilarity.py [EncodedNodes] [Clusters] [TitleAbstract1.txt] [Output File] [PaperDegree1.txt] [Path of TitleAbstract.txt and PaperDegree.txt]
+
+
+23. python InterClusteringSimilarity.py [EncodedNodes] [Clusters] [TitleAbstract1.txt] [Output File] [PaperDegree1.txt] [Path of TitleAbstract.txt and PaperDegree.txt]
 
 We can also compute the Intra-cluster cosine similarity within the nodes in a cluster.
 
-23. python ClusteringSimilarity.py [EncodedNodes] [Clusters] [TitleAbstract1.txt] [Output file] [PaperDegree1.txt] [Path of TitleAbstract1.txt and PaperDegree1.txt] [Largest cluster size before changing method of computing average cosine similarity]
+
+24. python ClusteringSimilarity.py [EncodedNodes] [Clusters] [TitleAbstract1.txt] [Output file] [PaperDegree1.txt] [Path of TitleAbstract1.txt and PaperDegree1.txt] [Largest cluster size before changing method of computing average cosine similarity]
 
 
