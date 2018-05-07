@@ -76,37 +76,37 @@ list the clusters of the nodes from 0 counting onwards.
 
 Next, we run the ClusterEvaluation to get the result:
 
-13. ./ClusterEvaluation.exe PGAEdges1.txt [GraclusClusters1.txt]
+13. ./ClusterEvaluation.exe PGAEdge1.txt [GraclusClusters1.txt]
 
 The next algorithm run is MCODE. First, encode the graph so it reads as an adjacency list.
 Use the program McodeEncoder.py
 
-14. python McodeEncoder.py [McodeHashed.txt] [McodeEdges.txt] [EncodedMcode.txt] 0
+14. python McodeEncoder.py [Hashed1.txt] [McodeEdges1.txt] [EncodedMcode1.txt] 0
 
 Now run the Mcode program.
 
-15. python Mcode.py [McodeEdges.txt] [McodeClusters.txt]
+15. python Mcode.py [McodeEdges1.txt] [McodeClusters1.txt]
 
 Now, get the clusters for each node starting from number 0.
 
-16. python McodeClustering.py [McodeClusters.txt] [McodeResultClusters.txt]
+16. python McodeClustering.py [McodeClusters1.txt] [McodeResultClusters1.txt]
 
 Then run the ClusterEvaluation executable to compute the conductance and modularity of the clustering done by MCODE.
 
-17. ./ClusterEvaluation.exe [PGAEdges.txt] [McodeResultClusters.txt]
+17. ./ClusterEvaluation.exe [PGAEdge1.txt] [McodeResultClusters1.txt]
 
 The sixth and final algorithm is IPCA. The process is very similar to how MCODE is run.
 In this case, the output from McodeEncoder.py can be used since the encoding technique is the same.
 We rename it IpcaEdges.txt to make it easier to follow.
 
-18. python Ipca.py [IpcaEdges.txt] [IpcaClusters.txt]
+18. python Ipca.py [McodeEdges1.txt] [IpcaClusters1.txt]
 
 Next, run get the appropriate clusters.
 
-19. python McodeClustering.py [IpcaClusters.txt] [IpcaResultClusters.txt]
+19. python McodeClustering.py [IpcaClusters1.txt] [IpcaResultClusters1.txt]
 
 Next, run cluster evaluation.
-20. ./ClusterEvaluation.exe [IpcaEdges.txt] [IpcaResultClusters.txt]
+20. ./ClusterEvaluation.exe [McodeEdges1.txt] [IpcaResultClusters1.txt]
 
 Next, we compute the inter-cluster cosine similarity between different clusters.
 The file to use is InterClusteringSimilarity.py
