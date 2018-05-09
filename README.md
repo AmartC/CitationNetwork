@@ -6,7 +6,7 @@ allNodes1.txt and allQuery1.txt are files which will be created by this program.
 Note that the names of the files that are taken in as input can be named anything, these are just suggested names.
 keywords.txt and allQuery.txt have been provided to you as a sample here. Running the command GraphingParser.py will create the allNodes1.txt file.
 
-Note, the code outline given is for an example of taking the queries from just the first MAG file. mag_papers_0.txt. All of the files which are mentioned have been added to this github repository and can be used to run the example. mag_papers_0.txt itself is over the 100 MB limit set by Github so instead it can be accessed through this Google drive link where it was compressed and can be download and then extracted from mag_papers_0.zip.
+Note, the code outline given is for an example of taking the queries from just the first MAG file. mag_papers_0.txt. All of the files which are mentioned have been added to this github repository and can be used to run the example. mag_papers_0.txt itself is over the 100 MB limit set by Github so instead it can be accessed through this Google drive link where it was compressed and can be downloaded and then extracted from mag_papers_0.zip.
 https://drive.google.com/open?id=1p1aAHroGlAp6febI-ejXmOLvpvPCVTba
 
 Note, as an example, a simpler example was added for the purpose of files. allNodes1a.txt, allNodes1b.txt, allNodes1c.txt, allNodes1d.txt all are allNodes1.txt split into 4 smaller files because of restrictions on Github for file size. You should merge together the four files 
