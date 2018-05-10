@@ -126,7 +126,7 @@ The program TitleHash.py is used to create this TitleAbstract1.txt.
 
 We also need to compute the degree of all papers that are part of the program. Use the script PaperDegree.py to do so.
 
-22. python PaperDegree.py [allNodes1.txt] [allQuery1.txt] [PaperDegree1.txt]
+22. python PaperDegree.py [allNodes1.txt] [Hashed1.txt] [PaperDegree1.txt]
 
 From here, we can run the InterClusteringSimilarity.py script.
 
