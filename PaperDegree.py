@@ -2,9 +2,16 @@ import sys
 
 if __name__ == "__main__":
     query_file = sys.argv[1]
+    query_nodes = sys.argv[2]
     node_degree = dict()
     query_degree = dict()
-    output_file = sys.argv[2]
+    output_file = sys.argv[3]
+
+    all_query_nodes = set()
+    with open(query_nodes, 'rb') as r:
+        for line in r:
+            line = line.rstrip()
+            all_query_nodes.add(line)
     with open(query_file, 'rb') as q:
         for line in q:
             line = line.rstrip().split(" ")
@@ -16,7 +23,7 @@ if __name__ == "__main__":
                     node_degree[line[other]] = set()
                 node_degree[line[other]].add(line[0])
 
-    for node in node_degree:
+    for node in all_query_nodes:
         query_degree[node] = len(node_degree[node])
 
     current = open(output_file, 'wb')
