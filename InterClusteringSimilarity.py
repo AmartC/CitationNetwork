@@ -74,7 +74,11 @@ if __name__ == "__main__":
             avg_cosine_similarity = 0.0
             total_comparisons = 0.0
             for e in range(0, len(largest_degree_clusters[c])):
+                if not largest_degree_clusters[c][e][0] in title_abstract_dict:
+                    continue
                 for f in range(0, len(largest_degree_clusters[d])):
+                    if not largest_degree_clusters[c][f][0] in title_abstract_dict:
+                        continue
                     vocab = title_abstract_dict[largest_degree_clusters[c][e][0]].split(" ")
                     vocab = set(vocab)
                     for each in title_abstract_dict[largest_degree_clusters[d][f][0]].split(" "):
@@ -84,6 +88,8 @@ if __name__ == "__main__":
                     cosine_sim_results = cosine_similarity(sklearn_representation)
                     avg_cosine_similarity += cosine_sim_results[0][1]
                     total_comparisons += 1.0
+            if total_comparisons == 0.0:
+                total_comparisons = 1.0
             final_result = avg_cosine_similarity / total_comparisons
             written_line = largest_degree_clusters[c][0][0] + " " + largest_degree_clusters[d][0][0] + " " + str(final_result) + "\n"
             cosine_sim.write(written_line)
