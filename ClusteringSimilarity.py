@@ -125,14 +125,19 @@ if __name__ == "__main__":
                     cosine_sim_results = cosine_similarity(sklearn_representation)
                     avg_cosine_similarity += cosine_sim_results[0][1]
                     total_comparisons += 1
-
+            if total_comparisons == 0.0:
+                total_comparisons = 1.0
             avg_cosine_similarity /= total_comparisons
             line_write = str(avg_cosine_similarity) + " " + str(size_cluster) + "\n"
             cosine_sim.write(line_write)
         else:
             total_comparisons = 0.0
             for a in range(0, size_cluster - 1):
+                if not cluster_assigned[cluster][a] in title_abstract_dict:
+                    continue
                 for b in range(a + 1, size_cluster):
+                    if not cluster_assigned[cluster][b] in title_abstract_dict:
+                        continue
                     vocab = title_abstract_dict[cluster_assigned[cluster][a]].split(" ")
                     vocab = set(vocab)
                     for each in title_abstract_dict[cluster_assigned[cluster][b]].split(" "):
@@ -142,6 +147,8 @@ if __name__ == "__main__":
                     cosine_sim_results = cosine_similarity(sklearn_representation)
                     avg_cosine_similarity += cosine_sim_results[0][1]
                     total_comparisons += 1.0
+            if total_comparisons == 0.0:
+                total_comparisons = 1.0
             avg_cosine_similarity /= total_comparisons
             line_write = str(avg_cosine_similarity) + " " + str(size_cluster) + "\n"
             cosine_sim.write(line_write)
