@@ -1,7 +1,7 @@
 import sys
 
 if __name__ == "__main__":
-    query_file = sys.argv[1]
+    nodes_file = sys.argv[1]
     query_nodes = sys.argv[2]
     node_degree = dict()
     query_degree = dict()
@@ -10,9 +10,10 @@ if __name__ == "__main__":
     all_query_nodes = set()
     with open(query_nodes, 'rb') as r:
         for line in r:
-            line = line.rstrip()
-            all_query_nodes.add(line)
-    with open(query_file, 'rb') as q:
+            line = line.rstrip().split(" ")
+            for k in line:
+                all_query_nodes.add(k)
+    with open(nodes_file, 'rb') as q:
         for line in q:
             line = line.rstrip().split(" ")
             if not line[0] in node_degree:
